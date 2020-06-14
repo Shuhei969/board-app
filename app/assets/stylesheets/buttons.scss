@@ -1,0 +1,26 @@
+@import './variables';
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 16px 0;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+.btn-secondary {
+  background-color: white;
+  border: solid 1px $primary-color;
+  width: 100%;
+  text-align: center;
+  color: $primary-color;
+  padding: 16px 0;
+  font-weight: bold;
+}
