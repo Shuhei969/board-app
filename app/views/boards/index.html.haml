@@ -1,1 +1,23 @@
-%h1 メニュー
+.container
+  %h2.section-title All Boards
+  - @boards.each do |board|
+    = link_to board_path(board) do
+      .card
+        .card_content
+          .card-menu
+            .card-title
+              %h2= board.title
+            - if user_signed_in? && current_user.has_written?(board)
+              .dropdown
+                = image_tag "edit.png", class: "dropbtn"
+                .dropdown-content.mini
+                  = link_to "編集する", edit_board_path(board.id)
+                  = link_to "削除する", board_path(board.id), data: { method: 'delete', confirm: "本当に削除してよろしいですか？"}
+          .card-text
+            %p= board.content
+          .card-auther
+            = image_tag 'default-avatar.png', class: 'card-avatar'
+        -#   .card-icon
+  = link_to new_board_path do
+    .card-new + Add New Board
+
