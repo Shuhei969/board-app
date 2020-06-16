@@ -1,5 +1,5 @@
 .container
-  %h2 ログイン
+  %h2.section-title ログイン
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email
@@ -16,3 +16,4 @@
     .actions
       = f.submit "ログイン", class: 'btn-primary'
   = render "devise/shared/links"
+
