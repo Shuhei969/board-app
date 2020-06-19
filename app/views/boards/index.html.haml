@@ -1,7 +1,7 @@
 .container
   %h2.section-title All Boards
   - @boards.each do |board|
-    = link_to board_path(board) do
+    = link_to board_tasks_path(board) do
       .card
         .card_content
           .card-menu
