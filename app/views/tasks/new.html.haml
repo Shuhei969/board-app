@@ -1,0 +1,16 @@
+.container
+  %h2.section-title Card New
+
+  %ul
+    - @task.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+    %div
+      = f.label :card_title, "name"
+    %div
+      = f.text_field :card_title, class: "text"
+    %div
+      = f.label :card_content, "description"
+    %div
+      = f.text_area :card_content, class: "text"
+    = f.submit "タスクを作成" ,class: "btn-primary"
