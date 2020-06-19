@@ -3,12 +3,18 @@
   - @tasks.each do |task|
     = link_to root_path do
       .card
+        - if task.eyecatch.attached?
+          .card_image
+            = image_tag task.eyecatch
         .card_content
           .card-menu
             .card-title
               %h2= task.card_title
           .card-text
             %p= task.card_content
+          .card-deadline
+            %p
+              期限：#{task.deadline}
           .card-auther
             = image_tag 'default-avatar.png', class: 'card-avatar'
         -#   .card-icon

@@ -13,7 +13,7 @@
     %header.header
       .header_pageTitle
         = link_to 'Board App', root_path
-      - if user_signed_in?  
+      - if user_signed_in? 
         .dropdown
           = image_tag 'default-avatar.png', class: 'header_avatar'
     - if flash.present?

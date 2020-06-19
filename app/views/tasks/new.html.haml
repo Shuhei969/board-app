@@ -6,6 +6,10 @@
       %li= message
   = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
     %div
+      = f.label :eyecatch, "eyecatch"
+    %div
+      = f.file_field :eyecatch
+    %div
       = f.label :card_title, "name"
     %div
       = f.text_field :card_title, class: "text"
@@ -13,4 +17,10 @@
       = f.label :card_content, "description"
     %div
       = f.text_area :card_content, class: "text"
+    %div
+      = f.label :deadline, 'deadline'
+    %div
+      = f.date_field :deadline,class: 'text'
+    %div
+      = f.hidden_field :user_id, :value => @user_id
     = f.submit "タスクを作成" ,class: "btn-primary"
