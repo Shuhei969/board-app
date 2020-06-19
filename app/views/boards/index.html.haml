@@ -1,9 +1,11 @@
 .container
   %h2.section-title All Boards
+  = link_to new_board_path do
+    .card-new + Add New Board
   - @boards.each do |board|
     = link_to board_tasks_path(board) do
       .card
-        .card_content
+        .card-content
           .card-menu
             .card-title
               %h2= board.title
@@ -15,9 +17,8 @@
                   = link_to "削除する", board_path(board.id), data: { method: 'delete', confirm: "本当に削除してよろしいですか？"}
           .card-text
             %p= board.content
-          .card-auther
+          .card-avatar
             = image_tag 'default-avatar.png', class: 'card-avatar'
-        -#   .card-icon
-  = link_to new_board_path do
-    .card-new + Add New Board
+  
+
 
