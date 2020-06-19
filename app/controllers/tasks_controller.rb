@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :authenticate_user!
     def index
       @board = Board.find(params[:board_id])
       @tasks = Task.all
