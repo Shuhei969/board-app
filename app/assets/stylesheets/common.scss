@@ -7,7 +7,14 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    text-align: center;
   }
+
+.dropbtn {
+  display: inline-block;
+  align-items: center;
+  line-height: 68px;
+}
   
   .dropdown-content {
     font-weight: normal;

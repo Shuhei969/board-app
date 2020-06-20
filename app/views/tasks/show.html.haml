@@ -1,0 +1,17 @@
+.container
+  .card-menu
+    %h2.section-title= @task.card_title
+    - if user_signed_in? && current_user.has_written?(@task)
+      .dropdown
+        = image_tag "edit.png", class: "dropbtn"
+        .dropdown-content.mini
+          = link_to "編集する", root_path
+          = link_to "削除する", root_path
+  
+  - if @task.eyecatch.attached?
+    .card-eyecatch
+      = image_tag @task.eyecatch, class:'card-eyecatch'
+  .card-text
+    %p= @task.card_content
+  %h2.comment-section Comment
+  
