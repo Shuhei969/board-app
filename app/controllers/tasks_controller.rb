@@ -4,6 +4,7 @@ class TasksController < ApplicationController
     def index
       @board = Board.find(params[:board_id])
       @tasks = @board.tasks
+      
     end
 
     def new
@@ -13,7 +14,9 @@ class TasksController < ApplicationController
     end
 
     def show
+      @board = Board.find(params[:board_id])
       @task = Task.find(params[:id])
+      @comments = @task.comments
     end
 
     def create

@@ -21,7 +21,7 @@
                 deadline：#{task.deadline}
           .card-menu
             .card-avatar
-              = image_tag 'default-avatar.png', class: 'card-avatar'
+              = image_tag task.user.avatar_image, class: 'card-avatar'
             .card-comment
               = image_tag 'comment-count.png', class: 'card-comment-img'
   
