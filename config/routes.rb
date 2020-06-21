@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'boards#index'
   resource :profiles
   resources :boards do
-    resources :tasks
+    resources :tasks do
+      resources :comments
+    end
   end
   resource :profile
 end

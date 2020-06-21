@@ -23,6 +23,7 @@
 class Task < ApplicationRecord
     validates :card_title, presence: true
     validates :card_content, presence: true
+    has_many :comments
     belongs_to :user
     belongs_to :board
     has_one_attached :eyecatch
