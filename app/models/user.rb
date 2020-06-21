@@ -31,6 +31,7 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
+
   def display_name
     profile&.nickname || self.email.split('@').first
     # ぼっち演算子 profileがあり、そのnicknameがnilじゃなければそのまま表示、なければ右を表示
@@ -47,4 +48,8 @@ class User < ApplicationRecord
       'default-avatar.png'
     end
   end
-end
+    
+  def has_written?(task)
+    tasks.exists?(id: task.id)
+  end
+
