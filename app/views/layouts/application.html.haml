@@ -15,7 +15,9 @@
         = link_to 'Board App', root_path
       - if user_signed_in? 
         .dropdown
-          = image_tag 'default-avatar.png', class: 'header_avatar'
+          = image_tag current_user.avatar_image, class: 'header_avatar'
+          .dropdown-content
+            = link_to "プロフィール",profile_path
     - if flash.present?
       .flash
         - flash.each do |key, value|
