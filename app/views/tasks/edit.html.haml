@@ -1,10 +1,10 @@
 .container
-  %h2.section-title Card New
+  %h2.section-title Card Edit
 
   %ul
     - @task.errors.full_messages.each do |message|
       %li= message
-  = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+  = form_with(model: @task, url: board_task_path(@board,@task), method: 'put', local: true) do |f|
     %div
       = f.label :eyecatch, "eyecatch"
     %div
@@ -23,4 +23,4 @@
       = f.date_field :deadline,class: 'text'
     %div
       = f.hidden_field :user_id, value: @task_user_id
-    = f.submit "タスクを作成" ,class: "btn-primary"
+    = f.submit "変更を保存" ,class: "btn-primary"

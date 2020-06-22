@@ -13,12 +13,18 @@
       = image_tag @task.eyecatch, class:'card-eyecatch'
   .card-text
     %p= @task.card_content
-  %h2.comment-section Comment
+  %h2.comments-section Comments
 
   - @comments.each do |comment|
-    .commnets
-      =image_tag comment.user.avatar_image, class: 'card-avatar'
-      %p= comment.content
-
+    - if user_signed_in? && current_user.has_written_comment?(comment)
+      .comments-box-self
+        .comments-avatar
+          =image_tag comment.user.avatar_image, class: 'card-avatar'
+        %p.comments-text= comment.content
+    - else
+      .comments-box
+        .comments-avatar
+          =image_tag comment.user.avatar_image, class: 'card-avatar'
+        %p.comments-text= comment.content
   = link_to new_board_task_comment_path(@board,@task) do
-    .card-new + Add New Card
+    .card-new + Add New Comment

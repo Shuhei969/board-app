@@ -50,8 +50,12 @@ class User < ApplicationRecord
     end
   end
     
-  def has_written?(task)
+  def has_written_task?(task)
     tasks.exists?(id: task.id)
+  end
+
+  def has_written_comment?(comment)
+    comments.exists?(id: comment.id)
   end
 end
 

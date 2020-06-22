@@ -1,0 +1,36 @@
+@import 'variables';
+
+.comments {
+
+    &-section {
+        margin-bottom: 20px;
+    }
+
+    &-box {
+        width: 100%;
+        display: flex;
+        border: solid 0 $text-h2-color;
+        padding: 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        background-color: #f2f2f2;
+        
+        &-self {
+            width: 100%;
+            display: flex;
+            border: solid 0 $text-h2-color;
+            padding: 8px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            background-color: #45f045;
+            
+        }
+    }
+
+    
+
+    &-text {
+        margin-left: 20px;
+        width: 70%;
+    }
+}

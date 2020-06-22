@@ -1,8 +1,8 @@
 class BoardsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
 
   def index
-    @boards = Board.all
+    @boards = Board.all.order('id DESC')
   end
 
   def new
@@ -41,6 +41,6 @@ class BoardsController < ApplicationController
 
   private 
   def board_params
-    params.require(:board).permit(:title, :content)
+    params.require(:board).permit(:title, :content, :user_id)
   end
 end

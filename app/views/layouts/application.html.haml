@@ -18,6 +18,9 @@
           = image_tag current_user.avatar_image, class: 'header_avatar'
           .dropdown-content
             = link_to "プロフィール",profile_path
+            = link_to "ログアウト", destroy_user_session_path,data: { method: "delete" }
+      - else
+        = link_to "ログイン", new_user_session_path, class: "header_loginBtn"
     - if flash.present?
       .flash
         - flash.each do |key, value|
