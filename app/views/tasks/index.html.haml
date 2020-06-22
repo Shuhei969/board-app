@@ -13,6 +13,12 @@
           .card-menu
             .card-title
               %h2= task.card_title
+            - if user_signed_in? && current_user.has_written_task?(task)
+              .dropdown
+                = image_tag "edit.png", class: "dropbtn"
+                .dropdown-content.mini
+                  = link_to "編集する", edit_board_task_path(@board,task.id)
+                  = link_to "削除する", board_task_path(@board,task.id), data: { method: 'delete', confirm: "本当に削除してよろしいですか？"}
           .card-text
             %p= task.card_content
           - if task.deadline.present?
