@@ -1,0 +1,16 @@
+{
+    "name": "board app",
+    "description": "This is boardapp",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/Shuhei969/board-app",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
