@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'hamlit'
 gem 'annotate'
 gem 'devise'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'dotenv-rails'
 
 end
 
